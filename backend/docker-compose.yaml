@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  webapp-database:
+    # platform: linux/x86_64
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'webapp-database'
+      MYSQL_ROOT_PASSWORD: 'webapp'
+    ports:
+      - '3306:3306'
+    volumes:
+      - webapp-database-volume:/var/lib/mysql
+volumes:
+  webapp-database-volume:
