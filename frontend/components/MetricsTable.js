@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import { Table, Space, Button } from "antd";
+import { Table, Space, Button, Row, Col } from "antd";
 import { LineChartOutlined, CloseCircleFilled } from "@ant-design/icons";
 import dayjs from 'dayjs';
 import { Bar } from "react-chartjs-2";
@@ -69,9 +69,13 @@ const MetricsTable = ({ metrics }) => {
         </div>
       )}
       {chartData && (
-        <Bar
-          data={chartData}
-          options={{
+	<Row align="center">
+	  <Col span={14}>
+	<div>
+         <Bar
+           data={chartData}
+           options={{
+            maintainAspectRatio: false,
             plugins: {
               title: {
                 display: true,
@@ -83,7 +87,10 @@ const MetricsTable = ({ metrics }) => {
               },
             },
           }}
-        />
+         />
+	</div>
+	     </Col>
+	      </Row>
       )}
     </div>
   );
