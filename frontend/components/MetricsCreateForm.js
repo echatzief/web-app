@@ -11,7 +11,7 @@ const MetricsCreateForm = ({ users }) => {
       const { userId, firstMetric, secondMetric, thirdMetric } = values;
       
       const data = `${firstMetric},${secondMetric},${thirdMetric}`
-      await fetch("http://localhost:8080/metrics", {
+      await fetch("http://192.168.1.113:8080/metrics", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

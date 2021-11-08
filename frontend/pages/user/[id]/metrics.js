@@ -19,7 +19,7 @@ const UserMetrics = ({ metrics }) => {
 export default UserMetrics;
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:8080/metrics");
+  const res = await fetch("http://192.168.1.113:8080/metrics");
   let data = await res.json();
   let metrics = data.metrics;
   metrics = metrics.map((u, idx) => ({ ...u, key: idx }));
@@ -31,7 +31,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:8080/users");
+  const res = await fetch("http://192.168.1.113:8080/users");
   let data = await res.json();
   let users = data.users;
 

@@ -46,7 +46,7 @@ const UsersTable = ({ users }) => {
   const deleteUser = async (id) => {
     try {
 
-      await fetch(`http://localhost:8080/users/${id}`, {
+      await fetch(`http://192.168.1.113:8080/users/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

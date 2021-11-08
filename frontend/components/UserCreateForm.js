@@ -8,7 +8,7 @@ const UserCreateForm = () => {
     try {
       const { username, firstName, lastName } = values;
       
-      await fetch("http://localhost:8080/users", {
+      await fetch("http://192.168.1.113:8080/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
