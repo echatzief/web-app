@@ -13,7 +13,7 @@ func main() {
 	db := database.Connect()
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://0.0.0.0:3000",
+		AllowOrigins: "http://localhost:3000",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 	api.User(app, db)

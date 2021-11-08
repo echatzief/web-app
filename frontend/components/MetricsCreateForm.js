@@ -8,8 +8,9 @@ const MetricsCreateForm = ({ users }) => {
 
   const onFinish = async (values) => {
     try {
-      const { userId, data } = values;
+      const { userId, firstMetric, secondMetric, thirdMetric } = values;
       
+      const data = `${firstMetric},${secondMetric},${thirdMetric}`
       await fetch("http://localhost:8080/metrics", {
         method: "POST",
         headers: {
@@ -55,8 +56,22 @@ const MetricsCreateForm = ({ users }) => {
               </Select>
             </Form.Item>
             <Form.Item
-              label="Metrics"
-              name="data"
+              label="First Metric"
+              name="firstMetric"
+              rules={[{ required: true, message: "Please input metrics!" }]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Second Metric"
+              name="secondMetric"
+              rules={[{ required: true, message: "Please input metrics!" }]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Third Metric"
+              name="thirdMetric"
               rules={[{ required: true, message: "Please input metrics!" }]}
             >
               <Input />
